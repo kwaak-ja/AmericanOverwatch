@@ -4,13 +4,278 @@
   <meta charset="UTF-8">
   <title>American Overwatch Corruption Timeline</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<style>
+*{margin: 0;padding: 0;}
+body {
+  background: #ddd;
+}
+
+#container
+{
+height: 1200px;
+width: 100%;
+background-color: #ddd;
+overflow: hidden;
+position: relative;
+#overflow-x: scroll;
+  margin-top: 30px;
+  display: inline-block;
+}
+
+#thumbs
+{
+background-color: #ddd;
+position: absolute;
+top: 0px;
+left: 0px;
+height: 100%;
+width: auto;
+overflow: hidden;
+white-space: nowrap;
+padding: 30px 100px;
+}
+
+li {
+  margin: 5px;
+}
+
+.history-block {
+  height: 100%;
+  width: 300px;
+  background-color: #cdcdcd;
+  margin: 0 -2px;
+  border-right: 1px solid #fff;
+  display: inline-block;
+  font-family: 'roboto condensed', sans-serif;
+  font-size:60px;
+  font-weight: 100;
+  color: #FFF;
+  cursor: pointer;
+  box-shadow: 2px 5px 20px rgba(0,0,0,0.8);
+  transition: width 0.2s;
+  overflow: hidden;
+}
+
+.history-block:last-of-type {
+  border-right: none;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  transition: background .5s;
+  background: rgba(0,0,0,.8);
+}
+
+.cover:hover {
+  width: 100%;
+  height: 100%;
+  transition: background .5s;
+  background: rgba(0,0,0,.5);
+}
+
+.year {
+  position: absolute;
+    top: 0px;
+    font-size: 15px;
+  font-weight:500;
+    margin: 40px 30px;
+}
+
+.title {
+  position: absolute;
+  display: block;
+  width: 260px;
+    top: 25px;
+    font-size: 15px;
+    margin: 25px; 5px; 0; 5px;
+  white-space: normal;
+  transition: width 0.2s;
+}
+
+.additionalInfo {
+  position: relative;
+  display: block;
+    top: 10px;
+    font-size: 15px;
+    margin: 25px; 5px; 0; 5px;
+  white-space: normal;
+  transition: width 0.2s;
+}
+
+.cabinet {
+  position: absolute;
+  display: block;
+  width: 673px;
+    top: 15px;
+    left: 600px;
+    font-size: 15px;
+  white-space: normal;
+  transition: width 0.2s;
+}
+
+.bullets {
+  position: relative;
+  margin: 25px;
+}
+
+.timeline {
+  display:none;
+  position: absolute;
+  bottom: 80px;
+    font-size: 20px;
+    margin: 20px;
+  transition: display 0.8s;
+}
+
+.timeline ul {
+  margin: 0px;
+padding: 0;
+list-style-type: none;
+text-align: center;
+}
+
+.timeline ul li {
+  display: inline;
+  font-size: 15px;
+  font-weight: 100;
+  padding: 0px 5px;
+}
+
+.timeline ul li {
+  display: inline;
+  font-size: 15px;
+  font-weight: 100;
+  padding: 0px 5px;
+}
+
+.timeline ul li:before {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(255,255,255,0.5);
+  content: '\f10c';
+  position: absolute;
+  top: 30px;
+  margin-left:10px;
+  transition: all 0.5s;
+}
+
+.timeline ul li:after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  margin-left:-10px;
+  width: 36px;
+  height:2px;
+  border: 1px solid rgba(255,255,255,0.5);
+  transition: all 0.5s;
+}
+
+.timelineYear, .timelineYear:hover {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.8s;
+}
+
+.timeline ul li:hover:before {
+  content: '\f111';
+  color: #ffffff;
+  font-size: 18px;
+  transition: all 0.5s;
+  top: 29px;
+  margin-left:9px
+}
+
+.timeline ul li:hover:after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  margin-left:-10px;
+  width: 36px;
+  height:2px;
+  border: 1px solid #fff;
+  transition: all 0.5s;
+}
+
+.timeline ul li:hover .timelineYear {
+  position: static;
+  top:-10px;
+}
+
+.bg-66 {
+  background: url(https://madison365.com/wp-content/uploads/2019/07/819px-Official_Portrait_of_President_Reagan_1981-e1564584911969.jpg);
+  background-size:cover;
+}
+
+.bg-76 {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/3/36/Gerald_Ford_presidential_portrait_%28cropped%29.jpg);
+  background-size:cover;
+}
+
+.bg-86 {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/5/5a/JimmyCarterPortrait2.jpg);
+  background-size:cover;
+}
+
+.bg-96 {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/1/16/Official_Portrait_of_President_Reagan_1981.jpg);
+  background-size:cover;
+}
+
+.bg-06 {
+  background: url(https://mediad.publicbroadcasting.net/p/wyprmain/files/styles/x_large/public/201812/george_h._w._bush__president_of_the_united_states__1989_official_portrait.jpg);
+  background-size:cover;
+}
+
+.bg-16 {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/d/d3/Bill_Clinton.jpg);
+  background-size:cover;
+}
+
+.bg-26 {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/d/d4/George-W-Bush.jpeg);
+  background-size:cover;
+}
+
+.bg-36 {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/8/8d/President_Barack_Obama.jpg);
+  background-size:cover;
+}
+
+.bg-46 {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg);
+  background-size:cover;
+}
+
+.bg-56 {
+  background: url(https://www.history.com/.image/t_share/MTU3ODc5MDg0MDE5MTY0ODk1/watergate-complex.jpg);
+  background-size:cover;
+}
+
+.bg-01 {
+  background: url(http://www.zombietime.com/prairie_fire/pfcoverbig.jpg);
+  background-size:cover;
+}
+
+.bg-02 {
+  background: url(https://i.pinimg.com/originals/43/2c/37/432c3754622b372109a95707ebd87d0e.jpg);
+  background-size:cover;
+}
+
+.bg-03 {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/a/ac/U.S._Marines_in_Operation_Allen_Brook_%28Vietnam_War%29_001.jpg);
+  background-size:cover;
+}    
+</style>
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <div id="container">
     <div id="thumbs">
+        //1955 - 1973
         <div class="history-block bg-03" id="Vietnam-War">
             <div class="cover"></div>
             <div class="year">1955 - 1973</div>
@@ -20,8 +285,9 @@
                 <p>Place Holder</p>
                 </div>
             </div>
-        </div>
-        <div class="history-block bg-02">
+        </div> 
+        //1960s - 1970s
+        <div class="history-block bg-02" id="Counterculture Movement">
             <div class="cover"></div>
             <div class="year">1960s - 1970s</div>
             <div class="title"><h1>Counterculture Movement</h1>
@@ -31,7 +297,8 @@
                 </div>
             </div>
         </div>
-        <div class="history-block bg-01">
+        //1969 - 1977
+        <div class="history-block bg-01" id="Weather Underground Organization">
             <div class="cover"></div>
             <div class="year">1969 - 1977</div>
             <div class="title"><h1>Weather Underground Organization</h1>
@@ -58,7 +325,8 @@
                 </div>
             </div>
         </div>
-        <div class="history-block bg-66">
+        //1970 - 1974
+        <div class="history-block bg-66" id="Richard Nixon">
             <div class="cover"></div>
             <div class="year">1970 - 1974</div>
             <div class="title"><h1>Richard Nixon</h1>
@@ -92,7 +360,8 @@
                 </div>	
             </div>
         </div> 
-        <div class="history-block bg-56">
+        //17 June 1972
+        <div class="history-block bg-56" id="Watergate Scandal">
             <div class="cover"></div>
             <div class="year">17 June 1972</div>
             <div class="title"><h1>Watergate Scandal</h1>
@@ -130,7 +399,8 @@
                 </div>
             </div>    
         </div>
-        <div class="history-block bg-76">
+        //1974 - 1977
+        <div class="history-block bg-76" id="Gerald Ford">
             <div class="cover"></div>
             <div class="year">1974 - 1977</div>
             <div class="title"><h1>Gerald Ford</h1>
@@ -147,7 +417,8 @@
                 </div>
             </div>
         </div>
-        <div class="history-block bg-86">
+        //1977 - 1981
+        <div class="history-block bg-86" id="Jimmy Carter">
             <div class="cover"></div>
             <div class="year">1977 - 1981</div>
             <div class="title"><h1>Jimmy Carter</h1>
@@ -291,7 +562,40 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     
     <script src="./script.js"></script>
+    
+    <script>
+    var viewportWidth, divWidth, tb, viewport;
+   
 
+viewport = $('#container').innerWidth();
+tb = $('#thumbs');
+divWidth = tb.outerWidth();
+    
 
+$(function () {
+
+    $('#container').mousemove(function (e)
+		{
+      tb.css({left: ((viewport - divWidth) * ((e.pageX / viewport).toFixed(3))).toFixed(5) +"px" });
+ 		});
+    $('.history-block .cabinet').hide(300);
+    $('.history-block').on('click', function(){
+        $('.history-block').css('width', '300px');
+        $('.history-block').find('.title').css('width', '300px');
+        $('.history-block .cabinet').hide(300);
+        $('.history-block').find('.additionalInfo').css('width', '200px');
+        $(this).css('width', '1300px');
+        $(this).find('.title').css('width', '500px');
+        $(this).find('.cabinet').show(300);
+        $(this).find('.additionalInfo').css('width', '550px');
+        $('#container').mousemove(function (e)
+                                  {tb.css({left: ((viewport - divWidth - 1300) * ((e.pageX / viewport).toFixed(3))).toFixed(5) + 900 + "px" }); });
+    });
+    
+    $('.timeline ul li').on('click', function () {
+        $(this).parent().blink();
+    });
+});
+    </script>
 </body>
 </html>
